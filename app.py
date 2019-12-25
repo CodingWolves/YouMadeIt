@@ -20,6 +20,7 @@ def icon():
 
 @app.route('/login')
 def login():
+    print(1)
     print(request)
     print(request.form)
     if "phone" not in request.form or "password" not in request.form:
