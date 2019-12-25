@@ -18,23 +18,24 @@ def icon():
     return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
-@app.route('/login')
+@app.route('/login', methods=["POST"])
 def login():
-    print(1)
-    print(request)
-    print(request.form)
-    if "phone" not in request.form or "password" not in request.form:
-        return '401'
+    if request.method == "POST":
+        print(1)
+        print(request)
+        print(request.form)
+        if "phone" not in request.form or "password" not in request.form:
+            return '401'
 
-    db = mongo.db
-    collection = db["Users"]
+        db = mongo.db
+        collection = db["Users"]
 
-    existing_user = collection.find_one({"phone": request.form["phone"]})
+        existing_user = collection.find_one({"phone": request.form["phone"]})
 
-    if existing_user is None:
-        return 401
-    else:
-        return existing_user
+        if existing_user is None:
+            return 401
+        else:
+            return existing_user
 
 
 if __name__ == '__main__':
