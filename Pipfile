@@ -9,6 +9,8 @@ name = "pypi"
 
 flask = "*"
 gunicorn = "*"
+flask_pymongo = "*"
+
 
 [requires]
 
