@@ -147,7 +147,7 @@ def verify_location():
     if doc is None:
         return "402"
 
-    doc_dic = doc.to_dict()
+    doc_dic = doc.get().to_dict()
 
     lat1 = values["location_x"]
     lon1 = values["location_y"]
