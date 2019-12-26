@@ -9,7 +9,7 @@ name = "pypi"
 
 flask = "*"
 gunicorn = "*"
-flask_pymongo = "*"
+firebase_admin = "*"
 
 
 [requires]
