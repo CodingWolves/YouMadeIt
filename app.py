@@ -144,14 +144,15 @@ def verify_location():
         return "401"
 
     doc = db.collection(u'events').document(values["event_id"])
-
     if doc is None:
         return "402"
 
+    doc_dic = doc.to_dict()
+
     lat1 = values["location_x"]
     lon1 = values["location_y"]
-    lat2 = doc.get("location_x")
-    lon2 = doc.get("location_y")
+    lat2 = doc_dic["location_x"]
+    lon2 = doc_dic["location_y"]
 
     distance = get_distance(lat1, lat2, lon1, lon2)
 
