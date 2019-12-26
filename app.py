@@ -157,8 +157,8 @@ def verify_location():
     distance = get_distance(lat1, lat2, lon1, lon2)
 
     if distance < 1000:
-        return True
-    return False
+        return "true"
+    return "false"
 
 
 def get_distance(lat1, lat2, lon1, lon2):
