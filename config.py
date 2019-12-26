@@ -11,7 +11,3 @@ class Config:
     FLASK_APP = environ.get('FLASK_APP')
     FLASK_ENV = environ.get('FLASK_ENV')
 
-    # Flask-SQLAlchemy
-    SQLALCHEMY_DATABASE_URI = conn_str = 'mssql+pyodbc:///?odbc_connect={}'.format(
-        urllib.parse.quote_plus(environ.get('DB_PARAMS')))
-    SQLALCHEMY_TRACK_MODIFICATIONS = environ.get('SQLALCHEMY_TRACK_MODIFICATIONS', False)
