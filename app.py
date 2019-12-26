@@ -22,7 +22,7 @@ def hash_password(password):
     return h.hexdigest()
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def start():
     return "hello"
 
